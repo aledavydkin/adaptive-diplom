@@ -1,18 +1,16 @@
-/*https://aledavydkin.github.io/net-diplom/ */
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+    url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'Open Sans';
     src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
     url('../fonts/OpenSans-Bold.woff') format('woff');
     font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'OpenSans-Regular';
-    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-    url('../fonts/OpenSans-Regular.woff') format('woff');
-    font-weight: normal;
     font-style: normal;
 }
 
@@ -28,7 +26,7 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'OpenSans-Regular', sans-serif;
     min-width: 320px;
 }
 
@@ -133,16 +131,16 @@ body {
     counter-reset: feature;
 }
 
-.view-sports-item:nth-child(3) {
+.view-sports-item:nth-child(4) {
     background: #f6f4fa;
 }
 
-.view-sports-item:nth-child(4) {
-    background: #5e42b0;
+.view-sports-item:nth-child(5) {
+    background: #0a0e34;
 }
 
-.view-sports:nth-child(3) .view-sports-item:nth-child(4){
-    background: #0a0e34;
+.view-sports:nth-child(2) .view-sports-item:nth-child(5){
+    background: #5e42b0;
 }
 
 .view-sports-img {
@@ -190,11 +188,11 @@ body {
     content: "0" counter(feature);
 }
 
-.view-sports-item:nth-child(4) .view-sports-number:after {
+.view-sports-item:nth-child(5) .view-sports-number:after {
     background-color: #efefef;
 }
 
-.view-sports:nth-child(3) .view-sports-item:nth-child(4) .view-sports-number:before {
+.view-sports:nth-child(3) .view-sports-item:nth-child(5) .view-sports-number:before {
     color: #8765dd;
 }
 
@@ -309,13 +307,16 @@ body {
     display: flex;
 }
 
+.header-title {
+    font-weight: bold;
+}
+
 
 @media (min-width: 961px) {
 
     .title-one {
-        font-size: calc( (100vw - 961px)/(1920 - 961) * (90 - 64) + 64px);
+        font-size: 90px;
         line-height: 9.5rem;
-        padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
 
@@ -335,26 +336,33 @@ body {
     }
 
     .header-title {
-        letter-spacing: 0.5rem;
+        letter-spacing: 0.6rem;
+        max-width: 1530px;
+        width: 100%;
     }
 
     .title-two {
-        margin-left: calc( (100vw - 961px)/(1920 - 961) * (500 - 110) + 65px);
+        text-align: right;
     }
 
     .download {
         width: 750px;
     }
 
+    .view-sports-row {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
     .view-sports-item {
         padding-top: 5.5rem;
-        padding-right: calc(20px + (200 - 20) * ( (100vw - 961px) / ( 1920 - 961) ));
+        padding-right: 10%;
         padding-bottom: 8rem;
         padding-left: calc(50% + 4.6rem);
     }
 
     .view-sports-img {
-        top: -1.5rem;
+        top: 0;
         right: calc(50% + 5rem);
     }
 
@@ -377,16 +385,16 @@ body {
         padding-top: 5rem;
         padding-right: 50%;
         padding-bottom: 8.5rem;
-        padding-left: calc(20px + (320 - 20) * ( (100vw - 961px) / ( 1920 - 961) ));
+        padding-left: 10%;
     }
 
     .view-sports:nth-child(3) .view-sports-title  {
-        margin-left: calc(15px + (315 - 15) * ( (100vw - 961px) / ( 1920 - 961) ));
+        margin-left: 10%
     }
 
     .view-sports:nth-child(3) .view-sports-img{
         left: calc(50% - 15.5rem);
-        top: -3rem;
+        top: 10px;
         right: 0;
     }
 
@@ -416,7 +424,7 @@ body {
 
     .advantages:nth-child(odd) .advantages-right {
         padding-right: 9rem;
-        padding-left: calc( (100vw - 961px)/(1920 - 961) * (125 - 10) + 10px);
+        padding-left: 10%;
     }
 
     .advantages:nth-child(odd) .advantages-left:before{
@@ -743,7 +751,7 @@ body {
 
     .view-sports-img{
         left: calc(50% - 9rem);
-        top: 8rem;
+        bottom: -30px;
     }
 
     .view-sports:nth-child(3) .view-sports-img {
@@ -770,6 +778,7 @@ body {
 
     .view-sports-item {
         padding: 5rem 2rem  5rem 2rem;
+        background-color: #fafafa;
     }
 
     .advantages-title {
@@ -837,6 +846,10 @@ body {
     .footer-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .view-sports-img {
+        position: relative;
     }
 
 }
